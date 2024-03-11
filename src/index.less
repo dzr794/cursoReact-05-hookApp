@@ -1,11 +1,29 @@
+@main-backgound : hwb(210 13% 84%);
+
 body{
   padding: 20px;
-  background-color: #212121;
+  background-color: @main-backgound;
   color: #fff;
 
   button{
     margin-right: 10px;
     background-color: #fff;
-    color: #212121;
+    color: @main-backgound;
+  }
+
+  a{  
+    color: hwb(240 37% 30%);
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-weight: 500;
+    
+    &:hover{
+      color: hwb(240 37% 0%);
+    }
+
+    .active{
+      text-decoration: underline;
+    }
   }
 }

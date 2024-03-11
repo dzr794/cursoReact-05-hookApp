@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 
 export const TodoItem = React.memo(({ todo, onDeleteTodo, onToggleTodo }) => {
@@ -8,6 +9,7 @@ export const TodoItem = React.memo(({ todo, onDeleteTodo, onToggleTodo }) => {
       <span 
         className={`align-self-center ${ (todo.done) ? 'text-decoration-line-through' : '' }`}
         onClick={ () => onToggleTodo( todo.id )}
+        aria-label='span'
         >{todo.description}</span>
       <button 
         className="btn btn-danger"
@@ -15,4 +17,13 @@ export const TodoItem = React.memo(({ todo, onDeleteTodo, onToggleTodo }) => {
         >Borrar</button>
     </li>
   )
+
 })
+
+
+TodoItem.propTypes = {
+  todo: PropTypes.object.isRequired,
+  onDeleteTodo: PropTypes.func.isRequired,
+  onToggleTodo: PropTypes.func.isRequired,
+}
+
